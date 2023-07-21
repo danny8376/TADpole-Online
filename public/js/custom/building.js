@@ -9,6 +9,13 @@ function buildDsiware(dsiwareData, len) {
     if (dsiwareData.other.hasOwnProperty(c)) data.push(dsiwareData.other[c]);;
   });
 
+  if (!len) {
+    len = data.reduce((s, i) => {
+        s += i.length + 0x20;
+        return s;
+    }, 0);
+  }
+
   let offset = 0;
   let dsiwareFinal = new Uint8Array(len);
   for (let i = 0; i < data.length; i++) {

@@ -56,7 +56,7 @@ function checkBrowserVersion() {
     let b = browser.good[reqBrowser] || browser.maybe[reqBrowser];
     if (b > reqVersion) throw new Error('Browser version too old, please update!');
     // some bugged browsers have 3+ version digits so anything >100 should be fine to filter
-    if (reqVersion > 100) throw new Error('Browser version unsupported!');
+    //if (reqVersion > 100) throw new Error('Browser version unsupported!');
 
     $('.p-browser-version').css('color', `${browser.good[reqBrowser] ? 'green' : 'orange'}`);
   } catch (e) {
